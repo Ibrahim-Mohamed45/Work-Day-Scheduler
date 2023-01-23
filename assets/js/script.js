@@ -14,6 +14,10 @@ let time = workHours[i];
 var timeRow = $(
     `<div class="row">
     <div class="col-2 hour"><h4> ${time}</h4></div>
+    <textarea class="col-8 "></textarea>
+    <button class="col-2 saveBtn">
+        <i class="fas fa-save"></i>
+    </button>
     </div>`
 );
 
