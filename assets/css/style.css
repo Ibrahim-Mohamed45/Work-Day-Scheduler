@@ -73,3 +73,21 @@ textarea {
     font-size: 26px;
     transition: all 0.3s ease-in-out;
 }
+
+.footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    gap: 10px;
+    padding-top: 20px;
+}
+
+.fa-github {
+    font-size: 24px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.fa-github:hover {
+    transform: rotate(360deg) scale(1.2);
+}
