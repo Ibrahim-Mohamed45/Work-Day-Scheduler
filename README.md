@@ -44,7 +44,7 @@ The live website looks like this:
 <img src="assets\images\Work-Scheduler-Website.png" alt="Image of what the website should look like.">
 
 ## Mock Up
-The following animation demonstrates the application functionality:
+The following animation demonstrates the application's functionality:
 
 <img src="assets\images\Work-Scheduler-GIF.gif" alt="Gif of what the website functionality should look like.">
 
