@@ -9,7 +9,7 @@ var now = dayjs().format("D MMMM YYYY");
 $("#currentDay").text(dayName + ' ' + now);
 
 // Array that contains the typical work hours.
-var workHours = [[9, "am"], [10, "am"], [11, "am"], [12, "pm"], [13, "pm"], [14, "pm"], [15, "pm"], [16, "pm"], [17, "pm"]];
+var workHours = [[9, "am"], [10, "am"], [11, "am"], [12, "pm"], [1, "pm"], [2, "pm"], [3, "pm"], [4, "pm"], [5, "pm"]];
 
 // For loop to generate a row for each of the work hours (9am till 17pm).
 for (let i = 0; i < workHours.length; i++) {
@@ -25,8 +25,17 @@ for (let i = 0; i < workHours.length; i++) {
     // Using day.js it gets the hour.
     let hour = dayjs().hour();
 
+    var timeintheDay;
+
+    // Converts the times to 24 hour time format. 
+    if (workHours[i][0] < 9) {
+        timeintheDay = workHours[i][0] + 12;
+    } else {
+        timeintheDay = workHours[i][0];
+    }
+
     // Changes textarea background color depending if the time is in the  past, present or the future.
-    if (workHours[i][0] < hour) {
+    if (timeintheDay < hour) {
         timeRow.append(
             `<textarea class="col-8 col-md-9 past"></textarea>
         <button class="col-2 col-md-1 saveBtn">
@@ -35,7 +44,7 @@ for (let i = 0; i < workHours.length; i++) {
         )
     };
 
-    if (workHours[i][0] === hour) {
+    if (timeintheDay === hour) {
         timeRow.append(
             `<textarea class="col-8 col-md-9 present"></textarea>
         <button class="col-2 col-md-1 saveBtn">
@@ -44,7 +53,7 @@ for (let i = 0; i < workHours.length; i++) {
         )
     };
 
-    if (workHours[i][0] > hour) {
+    if (timeintheDay > hour) {
         timeRow.append(
             `<textarea class="col-8 col-md-9 future"></textarea>
         <button class="col-2 col-md-1 saveBtn">
