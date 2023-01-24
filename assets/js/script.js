@@ -23,7 +23,7 @@ if (workHours[i][0] < hour) {
     timeRow.append(
         `<textarea class="col-9 past"></textarea>
         <button class="col-1 saveBtn">
-            <i class="fas fa-save"></i>
+            <i class="fas fa-save" ></i>
         </button>`
     )
 };
@@ -76,3 +76,7 @@ $('.saveBtn').on('click', function () {
   storeTasks();
 });
 
+$('#clearBtn').on('click', function () {
+    localStorage.clear();
+    location.reload();
+})
